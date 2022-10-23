@@ -20,6 +20,7 @@ from sklearn import metrics
 
 import streamlit as st
 
+import PIL as P
 
 # implémentation des données ----------------------------------------------------------------------------------------------------------
     # reg log
