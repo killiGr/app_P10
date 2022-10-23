@@ -91,7 +91,7 @@ st.write("""
 """)
 st.image(P.Image.open('photo_2.png'))
 st.image(P.Image.open('photo_P10.png'))
-st.image(P.Image.open('photo_2.png'))
+#st.image(P.Image.open('photo_2.png'))
 st.write("""
 ##### Gressier Kyllian \n ##### Mentor : Abdou Karim Kandji
 """)
