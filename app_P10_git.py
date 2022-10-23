@@ -85,14 +85,15 @@ def algo(df_test_ini, method):
 
 # Affichage ------------------------------------------------------------------------------------------------------------------------------
 
+st.image(P.Image.open('photo_2.png'))
 st.write("""
 # Application Vrais/Faux billets
 """)
-
+st.image(P.Image.open('photo_2.png'))
 st.write("""
 ##### Gressier Kyllian \n ##### Mentor : Abdou Karim Kandji
 """)
-
+st.image(P.Image.open('photo_2.png'))
     # Importer le fichier
 
 X_test_csv =st.file_uploader('Veuiller déposer les données')
@@ -100,6 +101,7 @@ X_test_csv =st.file_uploader('Veuiller déposer les données')
     # Afficher le resultat du modèle
 
 button = st.checkbox('Cliquez pour les importer')
+st.image(P.Image.open('photo_2.png'))
 if button:
     X_test = pd.read_csv(X_test_csv,sep=',')
 
