@@ -86,7 +86,6 @@ def algo(df_test_ini, method):
 
 # Affichage ------------------------------------------------------------------------------------------------------------------------------
 
-st.image(P.Image.open('photo_2.png'))
 st.write("""
 # Application Vrais/Faux billets
 """)
