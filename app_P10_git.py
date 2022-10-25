@@ -62,13 +62,13 @@ def algo(df_test_ini, method):
             df_result['result']=Y_pred_2
 
         elif method == 'Kmeans':
-            Y_pred_kmeans = pd.DataFrame(res.fit_predict(std.transform(df_test)))
+            Y_pred_kmeans = pd.DataFrame(res.predict(std.transform(df_test)))
 
-            #for i in range(len(Y_pred_kmeans)):
-            #    if int(Y_pred_kmeans.iloc[i]) == 0 :
-            #        Y_pred_kmeans.iloc[i]=1
-            #    else:
-            #        Y_pred_kmeans.iloc[i]=0
+            for i in range(len(Y_pred_kmeans)):
+                if int(Y_pred_kmeans.iloc[i]) == 0 :
+                    Y_pred_kmeans.iloc[i]=1
+                else:
+                    Y_pred_kmeans.iloc[i]=0
             # cette boucle inverse les 0 et 1 car le cluster 1 correspond aux faux billets
                        
             result = pd.DataFrame(Y_pred_kmeans.value_counts(normalize=True)*100)
