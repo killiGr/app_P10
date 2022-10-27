@@ -110,7 +110,7 @@ if button:
     select = st.selectbox('Choisissez un modèle',['...','Regression logistique','Kmeans'], index=0)
 
     result,df_result=algo(X_test,method=select)
-    st.write(result,df_result)
+    st.write('test',result,df_result)
 
 
 # streamlit run C:\Users\kylli\OC_notebook\P9\app_P10.py
