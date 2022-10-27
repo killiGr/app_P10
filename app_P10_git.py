@@ -57,6 +57,8 @@ def algo(df_test_ini, method):
             result = pd.DataFrame(Y_pred_2.value_counts(normalize=True)*100)
             result.rename(columns = {0 : '%'}, inplace = True)
             result['count']=[Y_pred_2[0][Y_pred_2[0]==0].count() , Y_pred_2[0][Y_pred_2[0]==1].count()]
+            result[' ']=['Vrais','Faux']
+            result.set_index(' ', inplace = True)
             
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_2
@@ -81,6 +83,8 @@ def algo(df_test_ini, method):
             result = pd.DataFrame(Y_pred_kmeans.value_counts(normalize=True)*100)
             result.rename(columns = {0 : '%'}, inplace = True)
             result['count']=[Y_pred_kmeans[0][Y_pred_kmeans[0]==0].count() , Y_pred_kmeans[0][Y_pred_kmeans[0]==1].count()]
+            result[' ']=['Vrais','Faux']
+            result.set_index(' ', inplace = True)
 
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_kmeans
