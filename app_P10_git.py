@@ -60,8 +60,8 @@ def algo(df_test_ini, method):
             
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_2
-            df_result['result'].loc[df_result['result']=='0']='Faux'
-            df_result['result'].loc[df_result['result']=='1']='Vrais'
+            df_result['result'].loc[df_result['result']==0]='Faux'
+            df_result['result'].loc[df_result['result']==1]='Vrais'
             
             # Ajout de la proba d'avoir 0 ou 1
             temp=pd.DataFrame(lr_select.estimator_.predict_proba(X_test_std[X_test_std.columns[lr_select.support_]]))
@@ -84,8 +84,8 @@ def algo(df_test_ini, method):
 
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_kmeans
-            df_result['result'].loc[df_result['result']=='0']='Faux'
-            df_result['result'].loc[df_result['result']=='1']='Vrais'
+            df_result['result'].loc[df_result['result']==0]='Faux'
+            df_result['result'].loc[df_result['result']==1]='Vrais'
             
     else:
         result = 'Aucun algorithme choisis'
