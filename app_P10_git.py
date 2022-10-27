@@ -60,7 +60,10 @@ def algo(df_test_ini, method):
             
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_2
+            df_result['result']=df_result['result'].loc[df_result['result']==0]='Faux'
+            df_result['result']=df_result['result'].loc[df_result['result']==1]='Vrais'
             
+            # Ajout de la proba d'avoir 0 ou 1
             temp=pd.DataFrame(lr_select.estimator_.predict_proba(X_test_std[X_test_std.columns[lr_select.support_]]))
             df_result['Faux (proba en %)']=temp[0]
             df_result['Vrais (proba en %)']=temp[1]
@@ -81,6 +84,8 @@ def algo(df_test_ini, method):
 
             df_result=pd.DataFrame(df_test_ini['id'].copy())
             df_result['result']=Y_pred_kmeans
+            df_result['result']=df_result['result'].loc[df_result['result']==0]='Faux'
+            df_result['result']=df_result['result'].loc[df_result['result']==1]='Vrais'
             
     else:
         result = 'Aucun algorithme choisis'
@@ -114,7 +119,7 @@ if button:
     select = st.selectbox('Choisissez un modèle',['...','Regression logistique','Kmeans'], index=0)
 
     result,df_result=algo(X_test,method=select)
-    st.write('Proportion de vrais ou faux' ,result ,'Resultat' ,df_result)
+    st.write('Proportion de vrais ou faux :' ,result ,'Resultat :' ,df_result)
 
 
 # streamlit run C:\Users\kylli\OC_notebook\P9\app_P10.py
